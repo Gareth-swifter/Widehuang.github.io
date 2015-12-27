@@ -4,45 +4,39 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>octopress迁移至hexo | Hexo</title>
+  <title>WebKit速查表 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="根据官方README.md配置
-$ npm install hexo-cli -g  
-下周基本配置导blog文件。
-$ hexo init blog
-$ cd blog
-$ npm install    
-之后就OK了
-$ hexo server 
-启动服务，我这里的地址是http://0.0.0.0:4000/,个人觉得相对于octopress来说配置简单了许多.
-$ hexo new &amp;qu">
+  <meta name="description" content="一.WebKit.framework结构WebKit.h   
+WebKitLegacy.h
+WKFoundation.h
+Classes
+WKBackForwardList.h // 访问过的网页的列表，可以用过后退和前进访问。
+    WKBackForwardListItem.h // webView中后退列表中的网页
+WKError.h // WebKit的错误
+WKFrameInfo.h">
 <meta property="og:type" content="article">
-<meta property="og:title" content="octopress迁移至hexo">
-<meta property="og:url" content="http://yoursite.com/2015/12/27/octopress-to-hexo/index.html">
+<meta property="og:title" content="WebKit速查表">
+<meta property="og:url" content="http://yoursite.com/2015/12/01/2015-12-01-webkit/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="根据官方README.md配置
-$ npm install hexo-cli -g  
-下周基本配置导blog文件。
-$ hexo init blog
-$ cd blog
-$ npm install    
-之后就OK了
-$ hexo server 
-启动服务，我这里的地址是http://0.0.0.0:4000/,个人觉得相对于octopress来说配置简单了许多.
-$ hexo new &amp;qu">
-<meta property="og:updated_time" content="2015-12-27T11:20:29.000Z">
+<meta property="og:description" content="一.WebKit.framework结构WebKit.h   
+WebKitLegacy.h
+WKFoundation.h
+Classes
+WKBackForwardList.h // 访问过的网页的列表，可以用过后退和前进访问。
+    WKBackForwardListItem.h // webView中后退列表中的网页
+WKError.h // WebKit的错误
+WKFrameInfo.h">
+<meta property="og:updated_time" content="2015-12-27T10:11:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octopress迁移至hexo">
-<meta name="twitter:description" content="根据官方README.md配置
-$ npm install hexo-cli -g  
-下周基本配置导blog文件。
-$ hexo init blog
-$ cd blog
-$ npm install    
-之后就OK了
-$ hexo server 
-启动服务，我这里的地址是http://0.0.0.0:4000/,个人觉得相对于octopress来说配置简单了许多.
-$ hexo new &amp;qu">
+<meta name="twitter:title" content="WebKit速查表">
+<meta name="twitter:description" content="一.WebKit.framework结构WebKit.h   
+WebKitLegacy.h
+WKFoundation.h
+Classes
+WKBackForwardList.h // 访问过的网页的列表，可以用过后退和前进访问。
+    WKBackForwardListItem.h // webView中后退列表中的网页
+WKError.h // WebKit的错误
+WKFrameInfo.h">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -224,11 +218,11 @@ $ hexo new &amp;qu">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-octopress-to-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2015-12-01-webkit" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/27/octopress-to-hexo/" class="article-date">
-  	<time datetime="2015-12-27T11:09:25.000Z" itemprop="datePublished">2015-12-27</time>
+      <a href="/2015/12/01/2015-12-01-webkit/" class="article-date">
+  	<time datetime="2015-12-01T03:19:29.000Z" itemprop="datePublished">2015-12-01</time>
 </a>
     </div>
   
@@ -241,7 +235,7 @@ $ hexo new &amp;qu">
         
   
     <h1 class="article-title" itemprop="name">
-      octopress迁移至hexo
+      WebKit速查表
     </h1>
   
 
@@ -257,33 +251,54 @@ $ hexo new &amp;qu">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>根据官方<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">README.md</a>配置</p>
-<pre><code>$ npm install hexo-cli -g  
-</code></pre><p>下周基本配置导blog文件。</p>
-<pre><code>$ hexo init blog
-$ cd blog
-$ npm install    
-</code></pre><p>之后就OK了</p>
-<pre><code>$ hexo server 
-</code></pre><p>启动服务，我这里的地址是<code>http://0.0.0.0:4000/</code>,个人觉得相对于octopress来说配置简单了许多.</p>
-<pre><code>$ hexo new &quot;Hello Hexo&quot;
-$ hexo generate 
-$ hexo deploy
-</code></pre><h4 id="u94FE_u63A5git"><a href="#u94FE_u63A5git" class="headerlink" title="链接git"></a>链接git</h4><p>安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a></p>
-<pre><code>$ npm install hexo-deployer-git --save
-</code></pre><p><code>_config.yml</code>中添加下面的东西</p>
-<pre><code>deploy:
-    type: git 
-      repo: &lt;repository url&gt; // GitHub repository URL
-      branch: [branch] // Branch name
-      message: [message] // Customize commit message 
-</code></pre><h4 id="u66F4_u6362_u76AE_u80A4"><a href="#u66F4_u6362_u76AE_u80A4" class="headerlink" title="更换皮肤"></a>更换皮肤</h4><p>来自于<code>litten</code>的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">hexo-theme-yilia</a>,替换方法也很简单。</p>
-<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
-</code></pre><p>配置<br>修改hexo根目录下的 _config.yml ： theme: yilia</p>
-<p>更新</p>
-<pre><code>cd themes/yilia
-git pull
-</code></pre>
+        <h5 id="u4E00-WebKit-framework_u7ED3_u6784"><a href="#u4E00-WebKit-framework_u7ED3_u6784" class="headerlink" title="一.WebKit.framework结构"></a>一.WebKit.framework结构</h5><pre><code>WebKit.h   
+WebKitLegacy.h
+WKFoundation.h
+</code></pre><p>Classes</p>
+<pre><code>WKBackForwardList.h // 访问过的网页的列表，可以用过后退和前进访问。
+    WKBackForwardListItem.h // webView中后退列表中的网页
+WKError.h // WebKit的错误
+WKFrameInfo.h // 网页布局信息
+WKNavigation.h // 虽然官方给的解释是「网页加载信息」，但里面什么都没有。。
+    WKNavigationAction.h // 包含一个可能导致导航的信息，用于判断变化
+    WKNavigationResponse.h // 包含一个导航相应，用于决策
+WKPreferences.h //
+WKProcessPool.h
+
+WKSecurityOrigin.h
+WKWebViewConfiguration.h // 初始化WebView的设置
+    WKUserContentController.h
+    WKUserScript.h // 加载用户js脚本
+    WKScriptMessage.h // 网页发送的信息
+WKWebView.h // 网页展示的View
+
+WKWebsiteDataRecord.h
+WKWebsiteDataStore.h
+WKWindowFeatures.h
+</code></pre><p>Protocols</p>
+<pre><code>WKUIDelegate.h
+WKNavigationDelegate.h
+WKScriptMessageHandler.h
+</code></pre><h5 id="u4E8C-_u521D_u59CB_u5316"><a href="#u4E8C-_u521D_u59CB_u5316" class="headerlink" title="二.初始化"></a>二.初始化</h5><h6 id="1-WebKit/WKWebView"><a href="#1-WebKit/WKWebView" class="headerlink" title="1.WebKit/WKWebView"></a>1.WebKit/WKWebView</h6><pre><code>// 可以使用`WKWebViewConfiguration *`进行相关配置的初始化函数
+- (instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
+// 默认初始化函数
+- (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
+</code></pre><p>与UIWebView相同的加载界面函数</p>
+<pre><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;
+- (nullable WKNavigation *)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL;
+// iOS 9新增
+- (nullable WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL;
+- (nullable WKNavigation *)loadFileURL:(NSURL *)URL allowingReadAccessToURL:(NSURL *)readAccessURL;
+</code></pre><p><code>loadFileURL:allowingReadAccessToURL:</code>函数是iOS 9新增 但是UIWebView没有，为了弥补WKWebView无法正确加载本地html吧。</p>
+<pre><code>// 调用js的方法
+- (void)evaluateJavaScript:(NSString *)javaScriptString completionHandler:(void (^ __nullable)(__nullable id, NSError * __nullable error))completionHandler;
+</code></pre><p>与UIWebView的<code>stringByEvaluatingJavaScriptFromString:</code>不同，WKWebView使用block进行回调。</p>
+<pre><code>/*! @abstract The web view&apos;s navigation delegate. */
+@property (nullable, nonatomic, weak) id &lt;WKNavigationDelegate&gt; navigationDelegate;
+/*! @abstract The web view&apos;s user interface delegate. */
+@property (nullable, nonatomic, weak) id &lt;WKUIDelegate&gt; UIDelegate;
+</code></pre><p>代理变为了两个<code>UIDelegate</code>和<code>navigationDelegate</code>.</p>
+
       
     </div>
     
@@ -292,18 +307,18 @@ git pull
     
 <nav id="article-nav">
   
-    <a href="/2015/12/27/关于UIImageView加个圆角的问题01~/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/12/27/octopress-to-hexo/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          (no title)
+          octopress迁移至hexo
         
       </div>
     </a>
   
   
-    <a href="/2015/12/01/2015-12-01-webkit/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">WebKit速查表</div>
+    <a href="/2015/11/10/octopress-setupyyou-du/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Octopress Setupy有毒</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -338,7 +353,7 @@ git pull
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="octopress-to-hexo" data-title="octopress迁移至hexo" data-url="http://yoursite.com/2015/12/27/octopress-to-hexo/"></div>
+	<div class="ds-thread" data-thread-key="2015-12-01-webkit" data-title="WebKit速查表" data-url="http://yoursite.com/2015/12/01/2015-12-01-webkit/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

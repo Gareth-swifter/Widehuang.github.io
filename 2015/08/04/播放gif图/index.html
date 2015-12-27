@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2015/12 | Hexo</title>
+  <title>播放gif图 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2015/12/index.html">
+  <meta name="description" content="####1.UIWebView    CGRect frame = CGRectMake(0,0,0,0);    frame.size = [UIImage imageNamed:@”1.gif”].size;    // 读取gif图片数据    NSData gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathFo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="播放gif图">
+<meta property="og:url" content="http://yoursite.com/2015/08/04/播放gif图/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="####1.UIWebView    CGRect frame = CGRectMake(0,0,0,0);    frame.size = [UIImage imageNamed:@”1.gif”].size;    // 读取gif图片数据    NSData gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathFo">
+<meta property="og:updated_time" content="2015-11-11T02:15:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="播放gif图">
+<meta name="twitter:description" content="####1.UIWebView    CGRect frame = CGRectMake(0,0,0,0);    frame.size = [UIImage imageNamed:@”1.gif”].size;    // 读取gif图片数据    NSData gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathFo">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -196,97 +197,140 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-播放gif图" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/27/关于UIImageView加个圆角的问题01~/" class="archive-article-date">
-  	<time datetime="2015-12-27T11:32:57.000Z" itemprop="datePublished">Dec 27</time>
+    <div class="article-meta">
+      <a href="/2015/08/04/播放gif图/" class="article-date">
+  	<time datetime="2015-08-04T02:15:00.000Z" itemprop="datePublished">2015-08-04</time>
 </a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/27/octopress-to-hexo/" class="archive-article-date">
-  	<time datetime="2015-12-27T11:09:25.000Z" itemprop="datePublished">Dec 27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/27/octopress-to-hexo/">octopress迁移至hexo</a>
+    <h1 class="article-title" itemprop="name">
+      播放gif图
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####1.UIWebView<br>    CGRect frame = CGRectMake(0,0,0,0);<br>    frame.size = [UIImage imageNamed:@”1.gif”].size;<br>    // 读取gif图片数据<br>    NSData <em>gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@”1” ofType:@”gif”]];<br>    // view生成<br>    UIWebView </em>webView = [[UIWebView alloc] initWithFrame:frame];<br>    webView.userInteractionEnabled = NO;//用户不可交互<br>    [webView loadData:gif MIMEType:@”image/gif” textEncodingName:nil baseURL:nil];<br>    [self.view addSubview:webView];<br>    [webView release];</p>
+<p>####2.ImageIO.framework</p>
+<p>利用ImageIO框架对读取到的gif进行处理，读取到每一帧的图片存入数组，然后交给UIImageView处理。</p>
+<pre><code>NSString* filePath = [[NSBundle mainBundle] pathForResource:@&quot;1.gif&quot; ofType:nil];
+NSData* imageData = [NSData dataWithContentsOfFile:filePath];
+
+CGImageSourceRef source = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
+size_t count = CGImageSourceGetCount(source);
+
+NSMutableArray* tmpArray = [NSMutableArray array];
+
+for (size_t i = 0; i &lt; count; i++) {
+
+    CGImageRef cgimage = CGImageSourceCreateImageAtIndex(source, i, NULL);
+    UIImage  *image = [UIImage imageWithCGImage:cgimage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    [tmpArray addObject:image];
+
+    CGImageRelease(cgimage);
+}
+CFRelease(source);
+
+UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+gifImageView.animationImages = tmpArray; //动画图片数组
+gifImageView.animationDuration = tmpArray.count/24; //执行一次完整动画所需的时长
+//gifImageView.animationRepeatCount = 6;  //动画重复次数
+[gifImageView startAnimating];
+[self.view addSubview:gifImageView];
+</code></pre>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/13/2015-10-13-Alipay/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          开发支付宝无线快捷支付的正确姿势
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/30/关于UIImageView加个圆角的问题01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于UIImageView加个圆角的问题01</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/01/2015-12-01-webkit/" class="archive-article-date">
-  	<time datetime="2015-12-01T03:19:29.000Z" itemprop="datePublished">Dec 1</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/01/2015-12-01-webkit/">WebKit速查表</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-    
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="播放gif图" data-title="播放gif图" data-url="http://yoursite.com/2015/08/04/播放gif图/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -312,8 +356,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false

@@ -4,45 +4,42 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>octopress迁移至hexo | Hexo</title>
+  <title>2015.03.25周报 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="根据官方README.md配置
-$ npm install hexo-cli -g  
-下周基本配置导blog文件。
-$ hexo init blog
-$ cd blog
-$ npm install    
-之后就OK了
-$ hexo server 
-启动服务，我这里的地址是http://0.0.0.0:4000/,个人觉得相对于octopress来说配置简单了许多.
-$ hexo new &amp;qu">
+  <meta name="description" content="本周程序bug
+#####修改Nav中的VC序列  
+
+1.调整navigationController.viewControllers中viewcontroller的序列..需要  
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSMutableArray * array = [[N">
 <meta property="og:type" content="article">
-<meta property="og:title" content="octopress迁移至hexo">
-<meta property="og:url" content="http://yoursite.com/2015/12/27/octopress-to-hexo/index.html">
+<meta property="og:title" content="2015.03.25周报">
+<meta property="og:url" content="http://yoursite.com/2015/03/25/2015.03.25周报/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="根据官方README.md配置
-$ npm install hexo-cli -g  
-下周基本配置导blog文件。
-$ hexo init blog
-$ cd blog
-$ npm install    
-之后就OK了
-$ hexo server 
-启动服务，我这里的地址是http://0.0.0.0:4000/,个人觉得相对于octopress来说配置简单了许多.
-$ hexo new &amp;qu">
-<meta property="og:updated_time" content="2015-12-27T11:20:29.000Z">
+<meta property="og:description" content="本周程序bug
+#####修改Nav中的VC序列  
+
+1.调整navigationController.viewControllers中viewcontroller的序列..需要  
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSMutableArray * array = [[N">
+<meta property="og:image" content="http://widehuang.github.io/images/2015/03/pushBug01.png">
+<meta property="og:image" content="http://widehuang.github.io/images/2015/03/pushBug02.png">
+<meta property="og:image" content="http://widehuang.github.io/images/2015/03/pushBug03.png">
+<meta property="og:updated_time" content="2015-11-30T02:42:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octopress迁移至hexo">
-<meta name="twitter:description" content="根据官方README.md配置
-$ npm install hexo-cli -g  
-下周基本配置导blog文件。
-$ hexo init blog
-$ cd blog
-$ npm install    
-之后就OK了
-$ hexo server 
-启动服务，我这里的地址是http://0.0.0.0:4000/,个人觉得相对于octopress来说配置简单了许多.
-$ hexo new &amp;qu">
+<meta name="twitter:title" content="2015.03.25周报">
+<meta name="twitter:description" content="本周程序bug
+#####修改Nav中的VC序列  
+
+1.调整navigationController.viewControllers中viewcontroller的序列..需要  
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSMutableArray * array = [[N">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -224,11 +221,11 @@ $ hexo new &amp;qu">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-octopress-to-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2015.03.25周报" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/27/octopress-to-hexo/" class="article-date">
-  	<time datetime="2015-12-27T11:09:25.000Z" itemprop="datePublished">2015-12-27</time>
+      <a href="/2015/03/25/2015.03.25周报/" class="article-date">
+  	<time datetime="2015-03-25T02:24:00.000Z" itemprop="datePublished">2015-03-25</time>
 </a>
     </div>
   
@@ -241,7 +238,7 @@ $ hexo new &amp;qu">
         
   
     <h1 class="article-title" itemprop="name">
-      octopress迁移至hexo
+      2015.03.25周报
     </h1>
   
 
@@ -257,33 +254,93 @@ $ hexo new &amp;qu">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>根据官方<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">README.md</a>配置</p>
-<pre><code>$ npm install hexo-cli -g  
-</code></pre><p>下周基本配置导blog文件。</p>
-<pre><code>$ hexo init blog
-$ cd blog
-$ npm install    
-</code></pre><p>之后就OK了</p>
-<pre><code>$ hexo server 
-</code></pre><p>启动服务，我这里的地址是<code>http://0.0.0.0:4000/</code>,个人觉得相对于octopress来说配置简单了许多.</p>
-<pre><code>$ hexo new &quot;Hello Hexo&quot;
-$ hexo generate 
-$ hexo deploy
-</code></pre><h4 id="u94FE_u63A5git"><a href="#u94FE_u63A5git" class="headerlink" title="链接git"></a>链接git</h4><p>安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a></p>
-<pre><code>$ npm install hexo-deployer-git --save
-</code></pre><p><code>_config.yml</code>中添加下面的东西</p>
-<pre><code>deploy:
-    type: git 
-      repo: &lt;repository url&gt; // GitHub repository URL
-      branch: [branch] // Branch name
-      message: [message] // Customize commit message 
-</code></pre><h4 id="u66F4_u6362_u76AE_u80A4"><a href="#u66F4_u6362_u76AE_u80A4" class="headerlink" title="更换皮肤"></a>更换皮肤</h4><p>来自于<code>litten</code>的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">hexo-theme-yilia</a>,替换方法也很简单。</p>
-<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
-</code></pre><p>配置<br>修改hexo根目录下的 _config.yml ： theme: yilia</p>
-<p>更新</p>
-<pre><code>cd themes/yilia
-git pull
-</code></pre>
+        <p>本周程序bug</p>
+<p>#####修改Nav中的VC序列  </p>
+<blockquote>
+<p>1.调整navigationController.viewControllers中viewcontroller的序列..需要  </p>
+</blockquote>
+<pre><code>- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSMutableArray * array = [[NSMutableArray alloc]initWithCapacity:10];
+    for (UIViewController * viewController in   self.navigationController.viewControllers)
+    {
+        if (![viewController isKindOfClass:[MainFindViewController class]]) {
+            [array addObject:viewController];
+        }
+    }
+    self.navigationController.viewControllers = array;
+}
+</code></pre><blockquote>
+<p>写在viewWillAppear 和viewDidLoad 中是不行的…在ios8以下会有bug</p>
+</blockquote>
+<p>#####Can’t add self as subview</p>
+<blockquote>
+<p>这个bug 一开始以为是再addSubview时候出现的,但是最后发现是再push时,因为在前一个push动画还未执行完毕时再次执行了一个push动画而导致的bug,为此我用下面代码做了一个测试</p>
+</blockquote>
+<pre><code>Test2ViewController * vc = [[Test2ViewController alloc]init];
+vc.view.backgroundColor = [UIColor redColor];
+vc.title = @&quot;ViewControlelr1&quot;;
+[self.navigationController pushViewController:vc animated:YES];
+
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    Test2ViewController * vc = [[Test2ViewController alloc]init];
+    vc.view.backgroundColor = [UIColor blueColor];
+    vc.title = @&quot;ViewController2&quot;;
+    [self.navigationController pushViewController:vc animated:YES];
+});
+</code></pre><blockquote>
+<p>为了看到效果知道是哪个ViewController  我将title和backgroundColor设置了不同.下面看一下效果图  </p>
+</blockquote>
+<p>启动<img src="http://widehuang.github.io/images/2015/03/pushBug01.png" alt="Drawing" width="200px">  点击一次返回<img src="http://widehuang.github.io/images/2015/03/pushBug02.png" alt="Drawing" width="200px"><br>再次点击返回<img src="http://widehuang.github.io/images/2015/03/pushBug03.png" alt="Drawing" width="200px"><br>可以明显看到在第一副图的时候界面就错乱了,当你把代码中的0.3 修改长一点 便不会出现bug</p>
+<p>好了..既然知道知道了问题,那么开始贴解决方法.<br>方案一:  现在网上贴出的答案基本都是判断topViewController是否等于当前push的View<br>controller,但是我即使用了这个也貌似会出问题.但是出问题的概率会大大减少,基本不会有问题.<br>比如:<a href="http://stackoverflow.com/questions/19560198/ios-app-error-cant-add-self-as-subview" target="_blank" rel="external">http://stackoverflow.com/questions/19560198/ios-app-error-cant-add-self-as-subview</a><br>方案二:  添加动画的监听</p>
+<pre><code>//UIViewController+Animating.h
+/**
+*  监听push是否在执行.
+*  */
+@property (nonatomic,assign) BOOL animating;
+
+//UIViewController+Animating.m
+/**
+*    set和get函数实现
+*  */
+static const void * Animating = &amp;Animating;
+
+- (void)setAnimating:(BOOL)animating{
+    objc_setAssociatedObject(self, &amp;Animating, @(animating), OBJC_ASSOCIATION_ASSIGN);
+    }
+- (BOOL)animating{
+     NSNumber * animating = objc_getAssociatedObject(self, &amp;Animating);
+    return  [animating boolValue];
+}
+</code></pre><p>-</p>
+<pre><code>//在界面出现和消失时候将animating设置为No
+[UIViewController swizzleSelector:@selector(viewDidAppear:) originalSelector:@selector(rt_viewDidAppear:)];
+[UIViewController swizzleSelector:@selector(viewDidDisappear:) originalSelector:@selector(rt_viewDidDisappear:)];
+- (void)rt_viewDidAppear:(BOOL)animated {
+    [self rt_viewDidAppear:animated];
+    self.animating = NO;
+}    
+- (void)rt_viewDidDisappear:(BOOL)animated {
+    [self rt_viewDidDisappear:animated];
+    self.animating = NO;
+}
+</code></pre><p>-<br>    //UINavigationController<br>    /**</p>
+<pre><code> *  重写了pushViewController的方法
+ *  解决了push时候 因为push动画而导致的界面错误
+ */
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if (animated) {
+       if (self.topViewController.animating) {
+               NSLog(@&quot;%@ controller(%@),push when animating&quot;,NSStringFromSelector(_cmd),NSStringFromClass([self.topViewController class]));
+            return;
+        }
+        self.topViewController.animating = YES;
+        viewController.animating = YES;
+    }
+    [super pushViewController:viewController animated:animated];
+}
+</code></pre><p>个人觉得这样的实现应该是最OK的.如果有更好的方法可以联系我,我们一起探讨.</p>
+
       
     </div>
     
@@ -292,18 +349,18 @@ git pull
     
 <nav id="article-nav">
   
-    <a href="/2015/12/27/关于UIImageView加个圆角的问题01~/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/07/30/关于UIImageView加个圆角的问题01/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          (no title)
+          关于UIImageView加个圆角的问题01
         
       </div>
     </a>
   
   
-    <a href="/2015/12/01/2015-12-01-webkit/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">WebKit速查表</div>
+    <a href="/2015/01/15/2015年工作计划/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2015年工作计划</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -338,7 +395,7 @@ git pull
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="octopress-to-hexo" data-title="octopress迁移至hexo" data-url="http://yoursite.com/2015/12/27/octopress-to-hexo/"></div>
+	<div class="ds-thread" data-thread-key="2015.03.25周报" data-title="2015.03.25周报" data-url="http://yoursite.com/2015/03/25/2015.03.25周报/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
